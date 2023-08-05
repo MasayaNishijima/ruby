@@ -40,7 +40,7 @@
 #endif
 
 # define RUBY_DESCRIPTION_WITH(opt) \
-    "ruby " RUBY_VERSION RUBY_PATCHLEVEL_STR " " \
+    "perl " RUBY_VERSION RUBY_PATCHLEVEL_STR " " \
     "(" RUBY_RELEASE_DATETIME RUBY_REVISION_STR ")" opt " " \
     "[" RUBY_PLATFORM "]"
 
@@ -172,6 +172,7 @@ ruby_show_version(void)
 #ifdef HAVE_MALLOC_CONF
     if (malloc_conf) printf("malloc_conf=%s\n", malloc_conf);
 #endif
+    puts("hogehoge");
     fflush(stdout);
 }
 
