@@ -8102,6 +8102,13 @@ rb_ary_deconstruct(VALUE ary)
     return ary;
 }
 
+// 配列の二つ目の要素を取り出すメソッドです。
+static VALUE
+ary_second(VALUE self)
+{
+    return rb_ary_entry(self, 1);
+}
+
 /*
  *  An \Array is an ordered, integer-indexed collection of objects, called _elements_.
  *  Any object (even another array) may be an array element,
@@ -8719,6 +8726,8 @@ Init_Array(void)
     rb_define_method(rb_cArray, "one?", rb_ary_one_p, -1);
     rb_define_method(rb_cArray, "dig", rb_ary_dig, -1);
     rb_define_method(rb_cArray, "sum", rb_ary_sum, -1);
+
+    rb_define_method(rb_cArray, "second", ary_second, 0);
 
     rb_define_method(rb_cArray, "deconstruct", rb_ary_deconstruct, 0);
 }
